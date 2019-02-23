@@ -23,22 +23,24 @@ describe('index', () => {
     it('increases ranks in .ranked-list by n', () => {
       increaseRankBy(3)
 
-      const rankedLists = document.querySelectorAll('.ranked-list')
-      const firstList = rankedLists[0]
-      const secondList = rankedLists[1]
+      const rankedLists = document
+        .getElementById('app')
+        .querySelectorAll('ul.ranked-list li')
+      // const firstList = rankedLists[0]
+      // const secondList = rankedLists[1]
 
-      let children = firstList.children
+      // let children = firstList.children
       let start = 1
-      for (let i = 0, l = children.length; i < l; i++) {
-        expect(parseInt(children[i].innerHTML)).to.equal(start + i + 3)
+      for (let i = 0, l = rankedLists.length; i < l; i++) {
+        expect(parseInt(rankedLists[i].innerText)).to.equal(parseInt(rankedLists[i].innerText) + 3)
       }
 
-      children = secondList.children
-      start = 12
-
-      for (let i = 0, l = children.length; i < l; i++) {
-        expect(parseInt(children[i].innerHTML)).to.equal(start - i + 3)
-      }
+      // children = secondList.children
+      // start = 12
+      //
+      // for (let i = 0, l = children.length; i < l; i++) {
+      //   expect(parseInt(children[i].innerHTML)).to.equal(start - i + 3)
+      // }
     })
   })
 })
