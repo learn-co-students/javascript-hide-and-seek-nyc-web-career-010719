@@ -18,15 +18,14 @@ function nestedTarget(){
 // }
 
 function increaseRankBy(n){
-  const rankList = document
-    .getElementById('app')
-    .querySelectorAll('ul.ranked-list li')
+  const rankList = document.getElementById('app').querySelectorAll('ul.ranked-list')
+
     // console.log(rankList)
-    for (let i = 0; i < rankList.length; ++i) {
-      rankList[i].innerText = (parseInt(rankList[i].innerText) + n)
+    for (let i = 0; i < rankList.length; i++) {
+      rankList[i].innerHTML = (parseInt(rankList[i].innerHTML) + n)
     }
 }
-increaseRankBy(3)
+// increaseRankBy(3)
 //
 function deepestChild(){
     // return document.querySelector('#grand-node').querySelector('div').querySelector('div').querySelector('div').querySelector('div')
